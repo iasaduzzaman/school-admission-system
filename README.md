@@ -1,6 +1,6 @@
 # School Admission System
 
-A production-grade, concurrent, first-come first-served School Admission System built with **C# / ASP.NET Core (.NET 8+)**, **PostgreSQL**, **React 18+ (TypeScript + Vite)**, and **Docker Compose**.
+A production-grade, concurrent, first-come first-served School Admission System built with **C# / ASP.NET Core (.NET 10)**, **PostgreSQL**, **React 18+ (TypeScript + Vite)**, and **Docker Compose**.
 
 Developed for the **Onnorokom Projukti Limited** Take-Home Assignment.
 
@@ -9,7 +9,7 @@ Developed for the **Onnorokom Projukti Limited** Take-Home Assignment.
 ## Architecture & Technology Stack
 
 ### Backend
-- **Framework:** ASP.NET Core Web API (.NET 8+)
+- **Framework:** ASP.NET Core Web API (.NET 10)
 - **Database & ORM:** PostgreSQL 16 + Entity Framework Core (Npgsql)
 - **Architecture:** Clean Layered Architecture (`Domain`, `Application`, `Infrastructure`, `Api`, `Tests`)
 - **Concurrency Control:** Atomic transactions with PostgreSQL row-level pessimistic locking (`SELECT ... FOR UPDATE`)
@@ -38,9 +38,6 @@ Developed for the **Onnorokom Projukti Limited** Take-Home Assignment.
    Simulating payment multiple times for an already confirmed reservation never increments `confirmedSeats` more than once.
 4. **Duplicate Prevention:**
    A student cannot hold multiple active reservations or confirmed admissions for the same class concurrently.
-5. **No 500s on Client Errors:**
-   All domain conflicts, validation failures, and not-found states return standardized 4xx status codes (`400`, `403`, `404`, `409`).
-
 ---
 
 ## Quick Start with Docker (Recommended)
@@ -69,8 +66,8 @@ docker compose down
 ## Running Locally for Development
 
 ### 1. Prerequisites
-- [.NET 8+ SDK](https://dotnet.microsoft.com/)
-- [Node.js 20+](https://nodejs.org/)
+- [.NET 10 SDK]
+- [Node.js 20+]
 - PostgreSQL running locally on port 5432
 
 ### 2. Backend Setup
