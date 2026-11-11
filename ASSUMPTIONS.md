@@ -12,8 +12,6 @@ This document outlines key technical decisions and assumptions made in accordanc
 ---
 
 ## 2. Reservation Expiration Strategy
-- **Dynamic Invariant Calculation:** Rather than relying on a polling background cron worker or manual API calls to delete or sweep expired holds, any seat calculation evaluates:
-  $$\text{heldSeats} = \operatorname{COUNT}(\text{status} = \text{'HELD'} \land \text{expires\_at} > \text{NOW}())$$
 - **Instant Release:** The very millisecond a reservation's `expires_at` timestamp passes, it ceases to count towards occupied seats. The next incoming applicant can immediately reserve that seat without delay.
 - **Lazy Status Transition:** When an individual hold is queried via `GET /holds/{holdId}` or `/me/holds`, its effective status dynamically returns `EXPIRED` if `status == 'HELD'` and `expiresAt <= now`.
 
