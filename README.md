@@ -109,17 +109,6 @@ dotnet test
 
 ---
 
-## Environment Variables
-
-| Variable | Target | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `ConnectionStrings__DefaultConnection` | Backend | `Host=postgres;Port=5432;Database=school_admission;Username=postgres;Password=postgres` | PostgreSQL connection string |
-| `HOLD_DURATION_SECONDS` | Backend | `600` | Seat reservation hold duration in seconds |
-| `ASPNETCORE_URLS` | Backend | `http://+:8080` | Bound ports for API |
-| `VITE_API_BASE_URL` | Frontend | `http://localhost:8080` | Backend API base URL consumed by the React app |
-
----
-
 ## API Specification Reference
 
 | Method | Path | Required Headers | Description |
