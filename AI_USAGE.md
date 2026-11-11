@@ -10,8 +10,6 @@ In adherence to Section 2.7 and Section 9 of the assignment specification, this 
 ---
 
 ## 2. Assisted Components & Responsibilities
-- **Domain & Architecture Structuring:** Designing the Clean Layered Architecture (`Domain`, `Application`, `Infrastructure`, `Api`, `Tests`) and establishing relational entities (`classes`, `admission_holds`).
-- **PostgreSQL & EF Core Schema:** Setting up table configurations, foreign key relationships, indexes, and partial unique index constraints.
 - **Concurrency & Pessimistic Locking:** Formulating the PostgreSQL `SELECT ... FOR UPDATE` row lock strategy to enforce the `heldSeats + confirmedSeats <= totalSeats` invariant across single and multi-instance deployments.
 - **Automated Integration & Concurrency Testing:** Crafting a 10-test automated suite using `WebApplicationFactory` and FluentAssertions, including parallel load tests.
 - **Frontend SPA Construction:** Developing responsive React 18+ TypeScript pages (School Admin & Parent/Student portal) with real-time countdown and polling mechanisms.
